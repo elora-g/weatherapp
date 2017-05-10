@@ -1,0 +1,25 @@
+<div>
+  <table class="table">
+      <h3>Températures</h3>
+      <input type="button" name="converttemp" value="{{temperatureType}}" ng-click="convert()" class="btn btn-primary offset-sm-1 col-sm-2">
+      <thead>
+        <tr>
+          <th>date/heure</th>
+          <th>température </th>
+          <th>évolution</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(key,value) in meteo"  ng-if="$index >4 && $index<15">
+          <td class="col-md-3">{{key}}</td>
+          <td class="col-md-3">{{value.temperature.sol|temperatureFilter:temperatureType}}</td>
+          <td class="col-md-3" ng-init = "precedentTemp = getTemperature()">
+            <img ng-if="precedentTemp > value.temperature.sol" src="resources/img/minus.png">
+            <img ng-if="precedentTemp < value.temperature.sol" src="resources/img/plus.png">
+            <img ng-if="precedentTemp == value.temperature.sol" src="resources/img/equal.png">
+            <span ng-init=setTemperature(value.temperature.sol)></span>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</div>

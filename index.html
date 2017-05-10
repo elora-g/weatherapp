@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="resources/css/bootstrap/css/bootstrap.min.css"> <!-- feuille de style bootsrap-->
+    <link rel="stylesheet" href="resources/css/style.css" type="text/css"> <!-- feuille de style principal -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <title>Weather App</title>
+  </head>
+  <body ng-app="AngularModule">
+
+    <div ng-controller="FirstCtrl" class="container">
+
+      <h1>Prévisions Météos</h1>
+
+      <fieldset>
+        <form method = "post"  class="form-horizontal" role = "form">
+          <div class="form-group row">
+            <label for="longitude" class="col-sm-2 col-form-label">Entrez la longitude</label>
+            <div class = "col-sm-2">
+              <input type="text" name ="longitude" ng-model = "longitude">
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <label for="latitude" class="col-sm-2 col-form-label">Entrez la latitude</label>
+            <div class = "col-sm-2">
+              <input type="text" name ="latitude" ng-model = "latitude">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <input type="button" ng-click="getMeteo()" value="Meteo" class="btn btn-primary offset-sm-1 col-sm-2">
+          </div>
+
+        </form>
+      </fieldset>
+
+      <img ng-if="!charged" src ="resources/img/loading.gif">
+      <temperature ng-if="display"></temperature>
+      <temps ng-if="display"></temps>
+  </div>
+
+
+    <script src ="js/filters/temperatureFilter.js"></script>
+    <script src ="js/services/DataService.js"></script>
+    <script src ="js/directives/temps.js"></script>
+    <script src ="js/directives/temperature.js"></script>
+    <script src ="js/controllers/FirstCtrl.js"></script>
+    <script src ="js/modules/AngularModule.js"></script>
+
+  </body>
+</html>

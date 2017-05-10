@@ -1,0 +1,39 @@
+
+.container{
+  width: 90%;
+}
+
+.redStyle{
+
+  background-color : #F53240;
+
+}
+
+.greenStyle{
+  background-color : #3CC47C;
+}
+
+h1{
+  margin-top : 2rem;
+  margin-bottom : 2rem;
+}
+
+input{
+  margin : 0;
+}
+
+fieldset{
+  margin-top : 2rem;
+  margin-bottom : 2rem;
+}
+img{
+  width : 8%;
+}
+
+.ope{
+  width : 32px;
+}
+
+th, td{
+  text-align : center;
+}

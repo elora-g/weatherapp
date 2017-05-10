@@ -1,0 +1,24 @@
+<div>
+  <table class="table">
+      <h3>Précipitations</h3>
+      <thead>
+        <tr>
+          <th>date/heure</th>
+          <th>précipitations</th>
+          <th>évolution</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(key,value) in meteo"  ng-if="$index >4 && $index<15">
+          <td class="col-md-3">{{key}}</td>
+          <td class="col-md-3">{{value.pluie}} mm</td>
+          <td class="col-md-3" ng-init = "precedentPluie = getTemps()">
+            <img ng-if="precedentPluie > value.pluie" src="resources/img/minus.png">
+            <img ng-if="precedentPluie < value.pluie" src="resources/img/plus.png">
+            <img ng-if="precedentPluie == value.pluie" src="resources/img/equal.png">
+            <span ng-init=setTemps(value.pluie)></span>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</div>
