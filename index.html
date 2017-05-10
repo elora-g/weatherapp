@@ -38,6 +38,7 @@
       </fieldset>
 
       <img ng-if="!charged" src ="resources/img/loading.gif">
+      <h3 ng-if="!charged">Chargement en cours</h3>
       <temperature ng-if="display"></temperature>
       <temps ng-if="display"></temps>
   </div>
